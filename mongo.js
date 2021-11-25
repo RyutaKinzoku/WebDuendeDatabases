@@ -17,7 +17,7 @@ router.use(bodyParser.urlencoded({extended: true}));
 const URI = "mongodb+srv://admin:admin@web-duende.rfjvk.mongodb.net/web-duende?retryWrites=true&w=majority";
 
 const storage = multer.diskStorage({
-    destination: "../../public/assets/images",
+    destination: "./public/assets/images",
     filename: (req, file, callback, filename) => {
       var ext = path.extname(file.originalname);
       try {
