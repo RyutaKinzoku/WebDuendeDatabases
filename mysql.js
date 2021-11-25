@@ -513,17 +513,17 @@ router.get('/obtenerCategoria', (req,res) => {
 })
 
 //Subcategorias
-router.get('/getSubcategorias', (req,res) => {
+router.get('/getSubcategorias/:id', (req,res) => {
     const sqlSelect = "SELECT * FROM Subcategoria WHERE idCategoria = ?;"
-    db.query(sqlSelect, [req.query.idCategoria], (err, result) => {
+    db.query(sqlSelect, [req.params.id], (err, result) => {
         console.log(result);
         res.send(result);
     })
 });
 
-router.get('/obtenerSubcategoria', (req,res) => {
+router.get('/obtenerSubcategoria/:id', (req,res) => {
     const sqlSelect = "SELECT * FROM Subcategoria WHERE ID = ?;"
-    db.query(sqlSelect, [req.query.idSubcategoria], (err, result) => {
+    db.query(sqlSelect, [req.params.id], (err, result) => {
         console.log(result);
         res.send(result);
     })
